@@ -1,4 +1,18 @@
 *.class
-# Package Files #
+
+# NodeJS dir
+node_modules/
+# Build dir
+build/
+
+# Package Files
 *.jar
 *.war
+
+# Gradle
+.gradle/
+
+# Intellij
+.idea/
+*.iml
+
