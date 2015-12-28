@@ -1,11 +1,11 @@
-package blog;
+package blog.configuration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HybrisblogConfiguration {
+public class BlogConfiguration {
     public static void main(String[] args) {
-        SpringApplication.run(HybrisblogConfiguration.class, args);
+        SpringApplication.run(BlogConfiguration.class, args);
     }
 }
