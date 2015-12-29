@@ -1,5 +1,7 @@
 run spring boot
-gradle clean build && java -jar build/libs/gs-actuator-service-0.1.0.jar
+gradle clean build && java -jar build/libs/blog-0.1.0.jar
+or
+gradle8 clean build && java -jar build/libs/blog-0.1.0.jar
 
 
 
