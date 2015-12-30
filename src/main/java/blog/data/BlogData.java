@@ -8,7 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 public class BlogData {
-    private String id;
+    private String blogId;
     private String title;
     private String description;
     private List<LinkData> links;

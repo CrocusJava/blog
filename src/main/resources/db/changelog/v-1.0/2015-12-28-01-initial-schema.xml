@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="changelog-1.0" author="Author Blog">
+        <createTable tableName="language">
+            <column name="language_uid" type="VARCHAR(3)">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="language_name" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="locale">
+            <column name="locale_uid" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="country" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city" type="VARCHAR(50)"/>
+            <column name="language_uid" type="VARCHAR(3)">
+                <constraints nullable="false" primaryKey="true" foreignKeyName="FK_language" referencedTableName="language"
+                             referencedColumnNames="language_uid"/>
+            </column>
+        </createTable>
+        <createTable tableName="user">
+            <column name="user_uid" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="first_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="position" type="VARCHAR(100)"/>
+            <column name="description" type="TEXT"/>
+            <column name="locale_uid" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true" foreignKeyName="FK_locale" referencedTableName="locale"
+                             referencedColumnNames="locale_uid"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
