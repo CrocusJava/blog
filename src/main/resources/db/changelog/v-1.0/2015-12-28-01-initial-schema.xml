@@ -44,5 +44,16 @@
                              referencedColumnNames="locale_uid"/>
             </column>
         </createTable>
+        <createTable tableName="blog">
+            <column name="blog_uid" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
